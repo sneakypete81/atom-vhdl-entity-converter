@@ -27,7 +27,7 @@ end add;
 ```
 
 ### Copy as Component:
-[ctrl] [shift] [C] - [ctrl] [shift] [C] copies the following to the clipboard:
+[Ctrl] [Shift] [C] - [Ctrl] [Shift] [C] copies the following to the clipboard:
 ```
 component add
 generic (
@@ -47,7 +47,7 @@ end component add;
 ```
 
 ### Copy as Instance:
-[ctrl] [shift] [C] - [ctrl] [shift] [I] copies the following to the clipboard:
+[Ctrl] [Shift] [C] - [Ctrl] [Shift] [I] copies the following to the clipboard:
 ```
 add_i : add
 generic map (
@@ -66,7 +66,7 @@ port map (
 ```
 
 ### Copy as Signals
-[ctrl] [shift] [C] - [ctrl] [shift] [S] copies the following to the clipboard:
+[Ctrl] [Shift] [C] - [Ctrl] [Shift] [S] copies the following to the clipboard:
 ```
 signal clk    : std_logic;
 signal rst    : std_logic;
