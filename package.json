@@ -1,0 +1,23 @@
+{
+  "name": "vhdl-entity-converter",
+  "main": "./lib/vhdl-entity-converter",
+  "version": "0.1.0",
+  "description": "Convert a VHDL entity into a component, instance or signal definitions, using the clipboard.",
+  "keywords": ["vhdl"],
+  "activationCommands": {
+    "atom-workspace": [
+      "vhdl-entity-converter:copy-as-component",
+      "vhdl-entity-converter:copy-as-instance",
+      "vhdl-entity-converter:copy-as-signals"
+    ]
+  },
+  "repository": "https://github.com/atom/atom-vhdl-entity-converter",
+  "license": "GPL-3.0",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "atom-package-deps": ">=4.0.0"
+  },
+  "package-deps": ["language-vhdl"]
+}

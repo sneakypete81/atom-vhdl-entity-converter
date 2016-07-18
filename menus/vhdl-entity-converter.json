@@ -1,0 +1,47 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "VHDL Entity Converter",
+        "submenu": [
+          {
+            "label": "Copy as Component",
+            "command": "vhdl-entity-converter:copy-as-component"
+          },
+          {
+            "label": "Copy as Instance",
+            "command": "vhdl-entity-converter:copy-as-instance"
+          },
+          {
+            "label": "Copy as Signals",
+            "command": "vhdl-entity-converter:copy-as-signals"
+          }
+        ]
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "VHDL Entity Converter",
+          "submenu": [
+            {
+              "label": "Copy as Component",
+              "command": "vhdl-entity-converter:copy-as-component"
+            },
+            {
+              "label": "Copy as Instance",
+              "command": "vhdl-entity-converter:copy-as-instance"
+            },
+            {
+              "label": "Copy as Signals",
+              "command": "vhdl-entity-converter:copy-as-signals"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
