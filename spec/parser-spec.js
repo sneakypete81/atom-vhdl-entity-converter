@@ -4,21 +4,12 @@ import { loadFixture } from "./helpers"
 
 describe("parser.parseEntityName", function() {
   it("can parse an entity name", function() {
-    entity = new Parser(`entity entity_name is
-                         end entity_name;
-                         `)
-    expect(entity.name).toEqual("entity_name")
+    entity = new Parser(loadFixture("entity/adder.vhd"))
+    expect(entity.name).toEqual("add")
   })
 
   it("can parse an entity name with mixed case", function() {
-    entity = new Parser(`EntiTy entityNameWithCase Is
-                         eND entityNameWithCase;
-                         `)
-    expect(entity.name).toEqual("entityNameWithCase")
-  })
-
-  it("can parse an entity name from a full entity", function() {
-    entity = new Parser(loadFixture("entity/adder.vhd"))
-    expect(entity.name).toEqual("add")
+    entity = new Parser(loadFixture("entity/adder_with_case.vhd"))
+    expect(entity.name).toEqual("addWithCase")
   })
 })
