@@ -4,8 +4,8 @@ GeNeric (
   HEight : inTeger := 2
 );
 PorT (
-  Clk    : in  STD_LOGIC;
+  Clk    : In  STD_LOGIC;
   IN     : in  Std_Logic_Vector(width-1 DownTo 0);
-  OutPut : out Std_Logic_Vector(width-1 DownTo 0)
+  OutPut : oUt Std_Logic_Vector(width-1 DownTo 0)
 );
 EnD addWithCase;
