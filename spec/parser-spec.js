@@ -5,7 +5,10 @@ import { loadFixture } from "./helpers"
 const adderGenerics = [{name: "WIDTH", type: "integer", default: "3"},
                        {name: "HEIGHT", type: "integer", default: "2"}]
 const adderWithCaseGenerics = [{name: 'wiDTH', type: 'Integer', default: '3'},
-                               {name: 'HEight', type: 'inTeger', default: '2' }]
+                               {name: 'HEight', type: 'inTeger', default: '2'}]
+const adderNoDefaultGenerics = [{name: "WIDTH", type: "integer", default: undefined},
+                                {name: "HEIGHT", type: "integer", default: undefined}]
+
 
 const adderPorts = [{name: 'clk', dir: 'in', type: 'std_logic'},
                     {name: 'in', dir: 'in', type: 'std_logic_vector(WIDTH-1 downto 0)'},
@@ -36,6 +39,11 @@ describe("parser.parseGenerics", function() {
   it("can parse generics from an entity with mixed case", function() {
     entity = new Parser(loadFixture("entity/adder_with_case.vhd"))
     expect(entity.generics).toEqual(adderWithCaseGenerics)
+  })
+
+  it("can parse generics without defaults from an entity", function() {
+    entity = new Parser(loadFixture("entity/adder_no_defaults.vhd"))
+    expect(entity.generics).toEqual(adderNoDefaultGenerics)
   })
 })
 
