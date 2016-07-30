@@ -1,5 +1,5 @@
 'use babel'
 
 export function loadFixture(filename) {
-  return require("fs").readFileSync("spec/fixture/" + filename, "utf-8")
+  return require("fs").readFileSync(__dirname + "/fixture/" + filename, "utf-8")
 }
