@@ -23,5 +23,12 @@ export const entities = {
                {name: "HEIGHT", type: "integer", default: undefined}],
     ports: [{name: 'clk', dir: 'in', type: 'std_logic'},
             {name: 'in', dir: 'in', type: 'std_logic_vector(WIDTH-1 downto 0)'},
+            {name: 'output', dir: 'out', type: 'std_logic_vector(WIDTH-1 downto 0)'}]},
+
+  adderNoGenerics: {
+    name: "add",
+    generics: [],
+    ports: [{name: 'clk', dir: 'in', type: 'std_logic'},
+            {name: 'in', dir: 'in', type: 'std_logic_vector(WIDTH-1 downto 0)'},
             {name: 'output', dir: 'out', type: 'std_logic_vector(WIDTH-1 downto 0)'}]}
   }
