@@ -1,7 +1,7 @@
 'use babel'
 import { componentTemplate, instanceTemplate, signalsTemplate } from "../lib/templates"
 import { loadFixture } from "./helpers"
-import { entities } from "./entities"
+import entities from "./entities"
 
 describe("templates.componentTemplate", function() {
   it("can create a component", function() {

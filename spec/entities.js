@@ -1,6 +1,6 @@
 'use babel'
 
-export const entities = {
+export default {
   adder: {
     name: "add",
     generics: [{name: "WIDTH", type: "integer", default: "3"},

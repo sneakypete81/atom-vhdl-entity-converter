@@ -1,7 +1,7 @@
 'use babel'
-import { Parser } from "../lib/parser"
+import Parser from "../lib/parser"
 import { loadFixture } from "./helpers"
-import { entities } from "./entities"
+import entities from "./entities"
 
 describe("parser", function() {
   it("can parse an entity", function() {
