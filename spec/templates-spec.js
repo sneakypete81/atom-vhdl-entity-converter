@@ -27,7 +27,7 @@ describe("templates.instanceTemplate", function() {
     expect(text).toEqual(loadFixture("instance/adder.vhd"))
   })
 
-  xit("can create a instance without generics", function() {
+  it("can create a instance without generics", function() {
     text = instanceTemplate(entities.adderNoGenerics)
     expect(text).toEqual(loadFixture("instance/adder_no_generics.vhd"))
   })
