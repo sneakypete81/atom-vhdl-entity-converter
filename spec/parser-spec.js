@@ -17,6 +17,21 @@ const adderWithCasePorts = [{name: 'Clk', dir: 'In', type: 'STD_LOGIC'},
                             {name: 'IN', dir: 'in', type: 'Std_Logic_Vector(width-1 DownTo 0)'},
                             {name: 'OutPut', dir: 'oUt', type: 'Std_Logic_Vector(width-1 DownTo 0)'}]
 
+describe("parser", function() {
+  it("can parse an entity", function() {
+    entity = new Parser(loadFixture("entity/adder.vhd"))
+    expect(entity.name).toEqual("add")
+    expect(entity.generics).toEqual(adderGenerics)
+    expect(entity.ports).toEqual(adderPorts)
+  })
+
+  it("can parse an entity with CR+LF line endings", function() {
+    entity = new Parser(loadFixture("entity/adder_with_cr_lf.vhd"))
+    expect(entity.name).toEqual("add")
+    expect(entity.generics).toEqual(adderGenerics)
+    expect(entity.ports).toEqual(adderPorts)
+  })
+})
 describe("parser.parseEntityName", function() {
   it("can parse an entity name", function() {
     entity = new Parser(loadFixture("entity/adder.vhd"))
