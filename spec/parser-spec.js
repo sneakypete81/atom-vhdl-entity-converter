@@ -32,6 +32,8 @@ describe("parser", function() {
     expect(entity.ports).toEqual(adderPorts)
   })
 })
+
+
 describe("parser.parseEntityName", function() {
   it("can parse an entity name", function() {
     entity = new Parser(loadFixture("entity/adder.vhd"))
@@ -72,5 +74,10 @@ describe("parser.parsePorts", function() {
   it("can parse ports from an entity with mixed case", function() {
     entity = new Parser(loadFixture("entity/adder_with_case.vhd"))
     expect(entity.ports).toEqual(adderWithCasePorts)
+  })
+
+  it("can parse ports from an entity with no generics", function() {
+    entity = new Parser(loadFixture("entity/adder_no_generics.vhd"))
+    expect(entity.ports).toEqual(adderPorts)
   })
 })
