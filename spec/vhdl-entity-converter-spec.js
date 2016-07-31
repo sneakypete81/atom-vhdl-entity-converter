@@ -35,9 +35,9 @@ describe("atom-entity-converter", () => {
       expect(notification.message).toBe("Component for 'add' copied to the clipboard")
     })
 
-    xit("selects the entity", () => {
+    it("selects the entity", () => {
       selectedText = atom.workspace.getActiveTextEditor().getSelectedText()
-      expect(selectedText).toBe(loadFixture("entity/adder.vhd").trim())
+      expect(selectedText).toBe(loadFixture("entity/adder.vhd"))
     })
   })
 
@@ -63,9 +63,9 @@ describe("atom-entity-converter", () => {
       expect(notification.message).toBe("Instance for 'add' copied to the clipboard")
     })
 
-    xit("selects the entity", () => {
+    it("selects the entity", () => {
       selectedText = atom.workspace.getActiveTextEditor().getSelectedText()
-      expect(selectedText).toBe(loadFixture("entity/adder.vhd").trim())
+      expect(selectedText).toBe(loadFixture("entity/adder.vhd"))
     })
   })
 
@@ -91,9 +91,9 @@ describe("atom-entity-converter", () => {
       expect(notification.message).toBe("Signals for 'add' copied to the clipboard")
     })
 
-    xit("selects the entity", () => {
+    it("selects the entity", () => {
       selectedText = atom.workspace.getActiveTextEditor().getSelectedText()
-      expect(selectedText).toBe(loadFixture("entity/adder.vhd").trim())
+      expect(selectedText).toBe(loadFixture("entity/adder.vhd"))
     })
   })
 
