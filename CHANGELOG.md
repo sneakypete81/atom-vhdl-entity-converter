@@ -1,3 +1,9 @@
+## 0.4.3 - 1 August 2016
+* Added TravisCI config
+* Added Appveyor config
+* Add configuration option for signal prefix (#5)
+* ESLint fixes
+
 ## 0.4.2 - 31 July 2016
 * Remove spurious newline for instances without generics
 * Include the trailing semicolon when selecting an entity
