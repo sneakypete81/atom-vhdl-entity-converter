@@ -25,9 +25,5 @@
     "language-vhdl"
   ],
   "devDependencies": {
-    "babel-eslint": "^6.1.2",
-    "eslint": "^3.2.2",
-    "eslint-config-standard": "^5.3.5",
-    "eslint-plugin-promise": "^2.0.0"
   }
 }
