@@ -1,5 +1,7 @@
 # VHDL Entity Converter
 
+[![Travis.ci Shield](https://img.shields.io/travis/sneakypete81/atom-vhdl-entity-converter/master.svg?style=flat-square&label=travis%20ci)](https://travis-ci.org/sneakypete81/atom-vhdl-entity-converter)
+
 Converts a VHDL entity definition into a component, instance or signal definitions, using the clipboard.
 
 Inspired by [Sublime Text VHDL Utils](https://github.com/korvus81/sublimetext-vhdl-utils). Requires the [VHDL Language](https://atom.io/packages/language-vhdl) package (this will be installed automatically).
@@ -27,7 +29,7 @@ end add;
 ```
 
 ### Copy as Component:
-[Ctrl] [Shift] [C] - [Ctrl] [Shift] [C] copies the following to the clipboard:
+`[Ctrl] [Shift] [C] - [Ctrl] [Shift] [C]` copies the following to the clipboard:
 ```
 component add
 generic (
@@ -47,7 +49,7 @@ end component add;
 ```
 
 ### Copy as Instance:
-[Ctrl] [Shift] [C] - [Ctrl] [Shift] [I] copies the following to the clipboard:
+`[Ctrl] [Shift] [C] - [Ctrl] [Shift] [I]` copies the following to the clipboard:
 ```
 add_i : add
 generic map (
@@ -66,7 +68,7 @@ port map (
 ```
 
 ### Copy as Signals
-[Ctrl] [Shift] [C] - [Ctrl] [Shift] [S] copies the following to the clipboard:
+`[Ctrl] [Shift] [C] - [Ctrl] [Shift] [S]` copies the following to the clipboard:
 ```
 signal clk    : std_logic;
 signal rst    : std_logic;
