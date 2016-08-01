@@ -1,7 +1,7 @@
 {
   "name": "vhdl-entity-converter",
   "main": "./lib/vhdl-entity-converter",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Convert a VHDL entity into a component, instance or signal definitions, using the clipboard.",
   "keywords": [
     "vhdl"
@@ -24,6 +24,5 @@
   "package-deps": [
     "language-vhdl"
   ],
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
