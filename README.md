@@ -1,6 +1,7 @@
 # VHDL Entity Converter
 
-[![Travis.ci Shield](https://img.shields.io/travis/sneakypete81/atom-vhdl-entity-converter/master.svg?style=flat-square&label=travis%20ci)](https://travis-ci.org/sneakypete81/atom-vhdl-entity-converter)
+[![Travis.ci Shield](https://img.shields.io/travis/sneakypete81/atom-vhdl-entity-converter/master.svg?label=travis%20ci)](https://travis-ci.org/sneakypete81/atom-vhdl-entity-converter)
+[![AppVeyor Shield](https://img.shields.io/appveyor/ci/sneakypete81/atom-vhdl-entity-converter/master.svg?label=appveyor )](https://ci.appveyor.com/project/sneakypete81/atom-vhdl-entity-converter)
 
 Converts a VHDL entity definition into a component, instance or signal definitions, using the clipboard.
 
