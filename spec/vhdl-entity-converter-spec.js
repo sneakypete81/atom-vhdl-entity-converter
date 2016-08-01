@@ -70,7 +70,7 @@ describe("atom-entity-converter", () => {
   })
 
 
-  describe("when executing the signas command inside an entity", () => {
+  describe("when executing the signals command inside an entity", () => {
     beforeEach(() => {
       waitsForPromise(() => {
         return atom.workspace.open(fixturePath("entity/adder.vhd"));
@@ -114,6 +114,25 @@ describe("atom-entity-converter", () => {
       notification = atom.notifications.getNotifications()[0]
       expect(notification.type).toBe("error")
       expect(notification.message).toBe("Please move the cursor inside a VHDL entity")
+    })
+  })
+
+
+  describe("when executing the signals command with a signal prefix configured", () => {
+    beforeEach(() => {
+      atom.config.set("vhdl-entity-converter.signalPrefix", "s_");
+
+      waitsForPromise(() => {
+        return atom.workspace.open(fixturePath("entity/adder.vhd"));
+      })
+      runs(() => {
+        atom.commands.dispatch(workspaceElement, "vhdl-entity-converter:copy-as-signals")
+        waitsForPromise(() => activationPromise)
+      })
+    })
+
+    it("copies the signals to the clipboard with a prefix", () => {
+      expect(atom.clipboard.read()).toBe(loadFixture("signals/adder_signal_prefix.vhd"))
     })
   })
 })
