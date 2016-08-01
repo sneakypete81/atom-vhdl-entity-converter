@@ -23,5 +23,10 @@
   },
   "package-deps": [
     "language-vhdl"
-  ]
+  ],
+  "devDependencies": {
+    "eslint": "^3.2.2",
+    "eslint-config-standard": "^5.3.5",
+    "eslint-plugin-promise": "^2.0.0"
+  }
 }

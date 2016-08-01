@@ -1,23 +1,22 @@
-'use babel'
-import { loadFixture, fixturePath} from "./helpers"
+"use babel"
+import { loadFixture, fixturePath } from "./helpers"
 
 describe("atom-entity-converter", () => {
-  let workspaceElement = null;
-  let activationPromise = null;
+  let workspaceElement = null
+  let activationPromise = null
 
   beforeEach(() => {
     workspaceElement = atom.views.getView(atom.workspace)
     activationPromise = atom.packages.activatePackage("vhdl-entity-converter")
     waitsForPromise(() => {
-      return atom.packages.activatePackage("language-vhdl");
+      return atom.packages.activatePackage("language-vhdl")
     })
   })
-
 
   describe("when executing the component command inside an entity", () => {
     beforeEach(() => {
       waitsForPromise(() => {
-        return atom.workspace.open(fixturePath("entity/adder.vhd"));
+        return atom.workspace.open(fixturePath("entity/adder.vhd"))
       })
       runs(() => {
         atom.commands.dispatch(workspaceElement, "vhdl-entity-converter:copy-as-component")
@@ -30,22 +29,21 @@ describe("atom-entity-converter", () => {
     })
 
     it("shows a notification", () => {
-      notification = atom.notifications.getNotifications()[0]
+      const notification = atom.notifications.getNotifications()[0]
       expect(notification.type).toBe("success")
       expect(notification.message).toBe("Component for 'add' copied to the clipboard")
     })
 
     it("selects the entity", () => {
-      selectedText = atom.workspace.getActiveTextEditor().getSelectedText()
+      const selectedText = atom.workspace.getActiveTextEditor().getSelectedText()
       expect(selectedText).toBe(loadFixture("entity/adder.vhd"))
     })
   })
 
-
   describe("when executing the instance command inside an entity", () => {
     beforeEach(() => {
       waitsForPromise(() => {
-        return atom.workspace.open(fixturePath("entity/adder.vhd"));
+        return atom.workspace.open(fixturePath("entity/adder.vhd"))
       })
       runs(() => {
         atom.commands.dispatch(workspaceElement, "vhdl-entity-converter:copy-as-instance")
@@ -58,22 +56,21 @@ describe("atom-entity-converter", () => {
     })
 
     it("shows a notification", () => {
-      notification = atom.notifications.getNotifications()[0]
+      const notification = atom.notifications.getNotifications()[0]
       expect(notification.type).toBe("success")
       expect(notification.message).toBe("Instance for 'add' copied to the clipboard")
     })
 
     it("selects the entity", () => {
-      selectedText = atom.workspace.getActiveTextEditor().getSelectedText()
+      const selectedText = atom.workspace.getActiveTextEditor().getSelectedText()
       expect(selectedText).toBe(loadFixture("entity/adder.vhd"))
     })
   })
 
-
   describe("when executing the signals command inside an entity", () => {
     beforeEach(() => {
       waitsForPromise(() => {
-        return atom.workspace.open(fixturePath("entity/adder.vhd"));
+        return atom.workspace.open(fixturePath("entity/adder.vhd"))
       })
       runs(() => {
         atom.commands.dispatch(workspaceElement, "vhdl-entity-converter:copy-as-signals")
@@ -86,22 +83,21 @@ describe("atom-entity-converter", () => {
     })
 
     it("shows a notification", () => {
-      notification = atom.notifications.getNotifications()[0]
+      const notification = atom.notifications.getNotifications()[0]
       expect(notification.type).toBe("success")
       expect(notification.message).toBe("Signals for 'add' copied to the clipboard")
     })
 
     it("selects the entity", () => {
-      selectedText = atom.workspace.getActiveTextEditor().getSelectedText()
+      const selectedText = atom.workspace.getActiveTextEditor().getSelectedText()
       expect(selectedText).toBe(loadFixture("entity/adder.vhd"))
     })
   })
 
-
   describe("when executing the component command outside an entity", () => {
     beforeEach(() => {
       waitsForPromise(() => {
-        return atom.workspace.open(fixturePath("entity/adder.vhd"));
+        return atom.workspace.open(fixturePath("entity/adder.vhd"))
       })
       runs(() => {
         atom.workspace.getActiveTextEditor().moveToBottom()
@@ -111,19 +107,18 @@ describe("atom-entity-converter", () => {
     })
 
     it("shows an error notification", () => {
-      notification = atom.notifications.getNotifications()[0]
+      const notification = atom.notifications.getNotifications()[0]
       expect(notification.type).toBe("error")
       expect(notification.message).toBe("Please move the cursor inside a VHDL entity")
     })
   })
 
-
   describe("when executing the signals command with a signal prefix configured", () => {
     beforeEach(() => {
-      atom.config.set("vhdl-entity-converter.signalPrefix", "s_");
+      atom.config.set("vhdl-entity-converter.signalPrefix", "s_")
 
       waitsForPromise(() => {
-        return atom.workspace.open(fixturePath("entity/adder.vhd"));
+        return atom.workspace.open(fixturePath("entity/adder.vhd"))
       })
       runs(() => {
         atom.commands.dispatch(workspaceElement, "vhdl-entity-converter:copy-as-signals")
