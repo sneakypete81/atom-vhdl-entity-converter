@@ -17,6 +17,13 @@ describe("parser", function () {
     expect(entity.generics).toEqual(entities.adder.generics)
     expect(entity.ports).toEqual(entities.adder.ports)
   })
+
+  it("can parse an entity containing comments", function () {
+    const entity = new Parser(loadFixture("entity/adder_with_comments.vhd"))
+    expect(entity.name).toEqual(entities.adder.name)
+    expect(entity.generics).toEqual(entities.adder.generics)
+    expect(entity.ports).toEqual(entities.adder.ports)
+  })
 })
 
 describe("parser.parseEntityName", function () {
